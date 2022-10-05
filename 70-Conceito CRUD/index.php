@@ -1,13 +1,5 @@
 <?php
-/*
-CRUD
-
-C -> CREATE
-R-> READ
-U-> UPDATE
-D-> DELETE
-*/ 
-require "config.php";
+require 'config.php';
 
 $lista = [];
 $sql = $pdo->query("SELECT * FROM usuarios");
@@ -25,8 +17,7 @@ if($sql->rowCount() > 0) {
         <th>EMAIL</th>
         <th>AÇÕES</th>
     </tr>
-    <?php
-    foreach($lista as $usuario): ?> 
+    <?php foreach($lista as $usuario): ?>
         <tr>
             <td><?=$usuario['id'];?></td>
             <td><?=$usuario['nome'];?></td>
@@ -38,5 +29,3 @@ if($sql->rowCount() > 0) {
         </tr>
     <?php endforeach; ?>
 </table>
-
-
